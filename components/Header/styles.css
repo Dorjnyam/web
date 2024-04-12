@@ -1,0 +1,50 @@
+/* styles.css */
+.header-container {
+    background-color: #333;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    /* Ensure it's above other content */
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-title {
+    color: #fff;
+    margin: 0;
+}
+
+.header-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.header-list li {
+    margin-right: 15px;
+}
+
+.header-link {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.header-link:hover {
+    color: #ff9900;
+    /* Change to your desired hover color */
+}
+
+/* Add padding to body to prevent content from being hidden under the fixed header */
+body {
+    padding-top: 50px;
+    /* Adjust according to your header height */
+}
