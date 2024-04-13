@@ -1,7 +1,7 @@
-import React from "react";
+// import React from "react";
 import "./styles.css";
 import "./Example.css";
-
+import React, { useState } from "react";
 /**
  * Since this component shows code we include the https://prismjs.com/
  * formatter. We invoke it by labelling code blocks with class="language-jsx"
@@ -97,7 +97,7 @@ class Example extends React.Component {
 
     return retVal;
   }
-
+  
   render() {
     return (
       <div className="container Example">
