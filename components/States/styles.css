@@ -6,7 +6,7 @@
  */
 
 body {
-    background-color: grey;
+    background-color: whitesmoke;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,9 +17,10 @@ body {
     padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
-    width: 400px;
+    width: 1500px;
     border: 1px dashed #722b00;
     display: inline-block;
     box-sizing: border-box;
     background-color: whitesmoke;
+    overflow-x: auto;
 }

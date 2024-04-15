@@ -7,7 +7,6 @@
     left: 0;
     width: 100%;
     z-index: 1000;
-    /* Ensure it's above other content */
 }
 
 .header-nav {
@@ -40,11 +39,8 @@
 
 .header-link:hover {
     color: #ff9900;
-    /* Change to your desired hover color */
 }
 
-/* Add padding to body to prevent content from being hidden under the fixed header */
 body {
     padding-top: 50px;
-    /* Adjust according to your header height */
 }

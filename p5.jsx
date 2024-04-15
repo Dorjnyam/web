@@ -2,6 +2,7 @@ import { HashRouter, Route, Link } from "react-router-dom";
 import React from "react";
 import ReactDOM from "react-dom"; // Import ReactDOM
 
+import "./p5.css";
 import Header from "./components/Header";  
 import States from "./components/States";  
 import Example from "./components/Example";  
