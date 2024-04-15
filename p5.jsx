@@ -21,4 +21,4 @@ const App = () => {
     );
 };
 
-ReactDOM.render(<App />, document.getElementById("react-app")); // Use ReactDOM.render instead of React.render
+ReactDOM.render(<App />, document.getElementById("react-app")); 

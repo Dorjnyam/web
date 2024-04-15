@@ -9,6 +9,7 @@ import React from "react";
 import Prism from "prismjs";
 import "prismjs/components/prism-jsx.js";
 import "../../node_modules/prismjs/themes/prism.css";
+import "../Header/index.jsx";
 
 /* eslint-disable  react/jsx-one-expression-per-line */
 /* eslint-disable  react/destructuring-assignment */
@@ -27,6 +28,7 @@ class Example extends React.Component {
       counter: 0,
       inputValue: "",
       buttonWasClicked: "",
+      motto: "",
     };
 
     // React events are called directly from DOM event handlers so we cannot
@@ -36,6 +38,7 @@ class Example extends React.Component {
     // Note: A commmon idiom in React code is to use JavaScript bind() to smash
     // the method to accomplish this passthrough to the method:
     //      this.handleChange = this.handleChange.bind(this);
+    this.handleMottoChange = this.handleMottoChange.bind(this);
   }
 
   // React components have several "lifecycle functions"
@@ -76,6 +79,12 @@ class Example extends React.Component {
     this.setState({ buttonWasClicked: buttonName });
   }
 
+  // Method called when the input box for motto is typed into.
+  handleMottoChange(event) {
+    this.setState({ motto: event.target.value });
+  }
+
+
   /* eslint-disable-next-line class-methods-use-this */
   outOfBandJSX(option) {
     let optionJSX;
@@ -97,23 +106,26 @@ class Example extends React.Component {
 
     return retVal;
   }
-  
+
   render() {
     return (
       <div className="container Example">
         <h1>CS142 Project 4 React.js Example</h1>
 
         <div className="motto-update">
-          {/* Your Problem 1 motto displaying and updating widget goes here */}
-          <label htmlFor="mottoInput">Motto ug:</label>
-          <input 
-            id="mottoInput"
-            type="text"
-            value={this.state.inputValue}
-            onChange={this.handleChangeBound} 
-          />
-          &nbsp;&ldquo;{" "}{this.state.inputValue} &rdquo;
-          Dorjnyam lab.
+          {
+            <div>
+              <h1>{this.state.name}</h1>
+              <p>My Motto: {this.state.motto}</p>
+              <label htmlFor="mottoId">Motto ug:</label>
+              <input
+                id="mottoId"
+                type="text"
+                value={this.state.motto}
+                onChange={this.handleMottoChange}
+              />
+            </div>
+          }
         </div>
 
         <p>
