@@ -1,55 +1,23 @@
-import React, { useState } from "react";
-import ReactDOM from "react-dom";
+import { HashRouter, Route, Link } from "react-router-dom";
+import React from "react";
+import ReactDOM from "react-dom"; // Import ReactDOM
 
-import Header from "./components/Header";
-import States from "./components/States";
-import Example from "./components/Example";
+import Header from "./components/Header";  
+import States from "./components/States";  
+import Example from "./components/Example";  
 
-function App() {
-    const [showStates, setShowStates] = useState(true);
-    const [buttonWasClicked, setButtonWasClicked] = useState("");
-
-    const handleSwitchView = () => {
-        setShowStates(!showStates);
-    };
-
-    const handleButtonClick = (buttonName) => {
-        setButtonWasClicked(buttonName);
-    };
-
+const App = () => {
     return (
-        <div>
-            <Header />
-            <button onClick={handleSwitchView}>
-                {showStates ? "Switch to Example" : "Switch to States"}
-            </button>
-            <div className="cs142-example-output">
-                <p>Test button clicks.</p>
-                {showStates ? (
-                    <States />
-                ) : (
-                    <div>
-                        <Example />,
-                        {buttonWasClicked && (
-                            <span>Last button clicked was: {buttonWasClicked}</span>
-                        )}
-                        <button
-                            type="button"
-                            onClick={() => handleButtonClick("one")}
-                        >
-                            Call handleButtonClick function with one
-                        </button>
-                        <button
-                            type="button"
-                            onClick={() => handleButtonClick("two")}
-                        >
-                            Call handleButtonClick function with two
-                        </button>
-                    </div>
-                )}
+        <HashRouter hashType="noslash">
+            <div>
+                <Header />
+                <Link to="/example">Example</Link>
+                <Link to="/states">States</Link>
+                <Route path="/example" component={Example} />
+                <Route path="/states" component={States} />
             </div>
-        </div>
+        </HashRouter>
     );
-}
+};
 
-ReactDOM.render(<App />, document.getElementById("reactapp"));
+ReactDOM.render(<App />, document.getElementById("react-app")); // Use ReactDOM.render instead of React.render

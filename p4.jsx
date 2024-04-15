@@ -7,14 +7,9 @@ import Example from "./components/Example";
 
 function App() {
     const [showStates, setShowStates] = useState(true);
-    const [buttonWasClicked, setButtonWasClicked] = useState("");
 
     const handleSwitchView = () => {
         setShowStates(!showStates);
-    };
-
-    const handleButtonClick = (buttonName) => {
-        setButtonWasClicked(buttonName);
     };
 
     return (
@@ -28,24 +23,7 @@ function App() {
                 {showStates ? (
                     <States />
                 ) : (
-                    <div>
-                        <Example />,
-                        {buttonWasClicked && (
-                            <span>Last button clicked was: {buttonWasClicked}</span>
-                        )}
-                        <button
-                            type="button"
-                            onClick={() => handleButtonClick("one")}
-                        >
-                            Call handleButtonClick function with one
-                        </button>
-                        <button
-                            type="button"
-                            onClick={() => handleButtonClick("two")}
-                        >
-                            Call handleButtonClick function with two
-                        </button>
-                    </div>
+                    <Example />
                 )}
             </div>
         </div>
